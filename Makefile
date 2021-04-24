@@ -1,4 +1,4 @@
-all: simple.wasm scanlines.wasm
+all: simple.wasm scanlines.wasm fuzzy.wasm
 
 serve:
 	node server.js

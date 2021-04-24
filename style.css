@@ -1,4 +1,17 @@
+html {
+    height: 100%;
+}
+
 body {
     background-color: #111;
     color: #eee;
+    height: 100%;
+}
+
+canvas {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
 }
