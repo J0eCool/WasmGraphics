@@ -28,12 +28,16 @@ http.createServer((request, response) => {
         return;
       }
 
+      // Certain file types require special MIME types
       let mime = 'text/plain';
-      if (filename.endsWith('.html')) {
-        mime = 'text/html';
-      } else if (filename.endsWith('.wasm')) {
-        mime = 'application/wasm';
-      }
+      let ext = path.extname(filename);
+      let exts = {
+        '.css': 'text/css',
+        '.html': 'text/html',
+        '.wasm': 'application/wasm',
+      };
+      mime = exts[ext] || mime;
+
       response.writeHead(200, {'Content-Type': mime});
       response.write(file, 'binary');
       response.end();

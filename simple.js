@@ -1,6 +1,6 @@
 async function loadWasm(filename, imports) {
   let bytes = fetch(filename);
-  let wasm = await new WebAssembly.instantiateStreaming(bytes, imports);
+  let wasm = await WebAssembly.instantiateStreaming(bytes, imports);
   return wasm.instance;
 }
 
